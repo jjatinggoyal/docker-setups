@@ -10,10 +10,14 @@
         sudo sysctl -w vm.max_map_count=262144
         ```
 
+- Create a topic named `test` in kafka-ui.
+
 # Run
 
 - `docker-compose up`
     
     - Access Opensearch-Dashboard at localhost:5601
     - Opensearch nodes at localhost:9200, localhost:9201 
-    - Logstash accepts inputs on localhost:3157, and outputs to opensearch nodes
+    - Kafka brokers available at kafka:9092
+    - kafka-ui available at localhost:8080
+    - Logstash consumes from Kafka topic `test`, and outputs to opensearch nodes
